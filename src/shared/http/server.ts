@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express from 'express'
 import 'express-async-errors'
 import cors from 'cors'
@@ -10,6 +11,6 @@ app.get('/', (request, response) => {
   return response.json({ message: 'ola dev' })
 })
 
-app.listen(3000, () => {
-  console.log('O SERVER ESTÁ ATIVO EM PORTA 3000!')
+app.listen(process.env.PORT, () => {
+  console.log(`O SERVER ESTÁ ATIVO EM ${process.env.PORT}`)
 })
